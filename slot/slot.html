@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn><span>yes</span></cpn>
+  <cpn>
+    <i>yes</i>
+    <span>yesyes</span>
+    <div>awesome</div>
+  </cpn>
+  <cpn></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <h2>组件</h2>
+    <p>我是组件</p>
+    <slot>
+      <button>button</button>
+    </slot>
+  </div>
+</template>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {},
+    components: {
+      cpn: {
+        template: '#cpn'
+      }
+    }
+  })
+</script>
+</body>
+</html>

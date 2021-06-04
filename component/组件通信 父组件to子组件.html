@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <cpn :numbers="number" :mess="message"></cpn>
+  <cpn :numbers="number"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <ul>
+      <li v-for="num in numbers">{{num}}</li>
+    </ul>
+    <p>{{mess}}</p>
+  </div>
+</template>
+
+<script>
+  const cpn = {
+    template: '#cpn',
+    // props: ['numbers', 'mess'],
+    props: {
+      //   类型限制
+      //   numbers:Array,
+      //   mess:String
+
+      //   提供默认值，必传属性
+      mess: {
+        type:String,
+        default:'hello2',   //没传入参数时的默认值
+        required:true
+      },
+      numbers:{
+        type:Array,
+        default: [],
+      }
+    }
+  }
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello',
+      number: ['1', '2', '3']
+    },
+    components: {
+      cpn
+    }
+  })
+</script>
+</body>
+</html>

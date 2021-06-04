@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--    事件调用方法无参数-->
+    <button v-on:click="use()">1</button>
+    <!--    简写-->
+    <button @click="use">2</button>
+    <button @click="use2(123)">3</button>
+    <button @click="use2">event</button>
+    <button @click="use2(123,$event)">event1</button>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        methods: {
+            use() {
+                console.log('used');
+            },
+            use2(abc, event) {
+                console.log('used2', abc,event);
+            }
+        }
+    })
+</script>
+</body>
+</html>

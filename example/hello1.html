@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.global.js"></script>
+</head>
+<body>
+<div id="hello2">{{message}}</div>
+
+<script>
+    const vm1 = {
+        data() {
+            return {
+                message: 'Hello!'
+            }
+        }
+    }
+    Vue.createApp(vm1).mount('#hello2');
+
+</script>
+</body>
+</html>

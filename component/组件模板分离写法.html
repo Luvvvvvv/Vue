@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<cpn></cpn>
+</div>
+<!--&lt;!&ndash;写法1&ndash;&gt;-->
+<!--<script type="text/x-template" id="cpn">-->
+<!--  <div>-->
+<!--    <h2>title</h2>-->
+<!--    <p>contentetetasda</p>-->
+<!--  </div>-->
+<!--</script>-->
+
+<!--写法2-->
+<template id="cpn">
+  <div>
+    <h2>title2</h2>
+    <p>contentetetasda2222222222</p>
+  </div>
+</template>
+
+<script>
+
+  Vue.component('cpn', {
+    template: '#cpn'
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {},
+  })
+</script>
+</body>
+</html>

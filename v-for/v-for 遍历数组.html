@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="i in names">{{i}}</li>
+    </ul>
+    <ul>
+        <li v-for="(i,index) in names">{{index+1}}-{{i}}</li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            names: ['archiken', 'betty', 'jug']
+        }
+    })
+</script>
+</body>
+</html>

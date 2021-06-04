@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <h2 :style="[style1,style2,style3]">{{message}}</h2>
+    <h2 :style="getStyle()">{{message}}</h2>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#demo',
+        data: {
+            message: 'hello',
+            style1: {color: 'red'},
+            style2: {backgroundColor: 'yellow'},
+            style3: {fontSize: '51px'}
+        },
+        methods: {
+            getStyle: function () {
+                return [this.style1, this.style2, this.style3]
+            }
+        }
+    })
+</script>
+</body>
+</html>

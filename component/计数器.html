@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="calculator">
+  <calculator></calculator>
+  <calculator></calculator>
+  <calculator></calculator>
+</div>
+
+<template id="calculate">
+  <div>
+    <h2>当前计数：{{counter}}</h2>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+</template>
+
+<script>
+  Vue.component('calculator', {
+    template: '#calculate',
+    data() {
+      return {
+        counter: 0
+      }
+    },
+    methods:{
+      increment() {
+        this.counter++
+      },
+      decrement() {
+        this.counter--
+      }
+    }
+  })
+
+  const app = new Vue({
+    el: '#calculator',
+  })
+</script>
+
+</body>
+</html>

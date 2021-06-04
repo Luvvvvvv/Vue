@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li v-for="i in movies">{{i}}</li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el: '#demo',
+        data: {
+            message: 'movies',
+            movies: ['holiday', 'flipped', 'riverdale']
+        }
+    })
+</script>
+</body>
+</html>

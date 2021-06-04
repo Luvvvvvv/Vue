@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <img v-bind:src="imgUrl" alt="">
+<!--    简写-->
+    <a :href="baiduUrl">Baidu</a>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#demo',
+        data: {
+            message: 'hello',
+            imgUrl: 'https://cn.vuejs.org/images/logo.png',
+            baiduUrl: 'https://www.baidu.com'
+        }
+    })
+</script>
+</body>
+</html>
